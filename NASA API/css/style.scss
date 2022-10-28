@@ -9,6 +9,7 @@ body {
     //background-position: center;
     //background-clip: border-box;
     //height: 100vh;
+    min-width: 100%;
     background-color: rgb(16, 20, 36);
 }
 h1 {
@@ -70,10 +71,22 @@ h1 {
 
 @media screen and (max-width: 1000px) {
     .wrapper {
+        margin: 0;
+        width: 70vw;
+        //justify-content: center;
+        //align-items: center;
         flex-direction: column;
         div {
             margin-bottom: 20px;
         }
         margin-bottom: 100px;
+        p {
+            text-align: center;
+            margin-right: 0;
+        }
+        img {
+            width: 150px;
+            height: 300px;
+        }
     }
 }

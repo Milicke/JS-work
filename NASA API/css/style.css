@@ -5,6 +5,7 @@
 }
 
 body {
+  min-width: 100%;
   background-color: rgb(16, 20, 36);
 }
 
@@ -68,10 +69,20 @@ input {
 
 @media screen and (max-width: 1000px) {
   .wrapper {
+    margin: 0;
+    width: 70vw;
     flex-direction: column;
     margin-bottom: 100px;
   }
   .wrapper div {
     margin-bottom: 20px;
+  }
+  .wrapper p {
+    text-align: center;
+    margin-right: 0;
+  }
+  .wrapper img {
+    width: 150px;
+    height: 300px;
   }
 }/*# sourceMappingURL=style.css.map */
