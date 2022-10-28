@@ -1,13 +1,24 @@
+let key = "SRtXBlplnNoSXvpjVt4FE6HibtDZD7owzXafoSMz";
+let day,month,year,date;
+let id = document.querySelector('#text');
+day = new Date().getDate();
+month = new Date().getMonth()+1;
+year = new Date().getFullYear();
+date = `${year}-${month}-${day}`;
 async function API() {
-    let link = "https://api.nasa.gov/planetary/apod?api_key=";
-    let key = "SRtXBlplnNoSXvpjVt4FE6HibtDZD7owzXafoSMz";
-    let response = await fetch(link+`${key}`);
+    let link = `https://api.nasa.gov/planetary/apod?api_key=${key}&&thumbs=true&date=${date}`;
+    //console.log(link);
+    let response = await fetch(link);
     response = await response.json();
-    //console.log(response);
-    document.querySelector('body').style.backgroundImage = `url(${response.hdurl})`;
-    document.querySelector('h3').innerHTML = `${response.copyright}`;
-    document.querySelector('h2').innerHTML = `${response.title}`;
+    
+
+    document.querySelector('img').src = `${response.hdurl}`;
     document.querySelector('p').innerHTML = `${response.explanation}`;
-    document.querySelector('span').innerHTML = `${response.date}`;
 }
+id.addEventListener("change", () => {
+    date = id.value;
+    console.log(date);
+    API();
+})
+
 API();
