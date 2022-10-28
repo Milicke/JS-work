@@ -10,14 +10,15 @@ async function API() {
     //console.log(link);
     let response = await fetch(link);
     response = await response.json();
+    console.log(response);
     
-
+    if(response.hdurl)
     document.querySelector('img').src = `${response.hdurl}`;
+    else document.querySelector('img').src = `${response.thumbnail_url}`;
     document.querySelector('p').innerHTML = `${response.explanation}`;
 }
 id.addEventListener("change", () => {
     date = id.value;
-    console.log(date);
     API();
 })
 
